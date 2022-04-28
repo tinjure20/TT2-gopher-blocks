@@ -1,0 +1,148 @@
+{
+	"version": 2,
+	"title": "Black",
+	"settings": {
+		"color": {
+			"palette": [
+            {
+              "slug": "foreground",
+              "color": "#b3b3b3",
+              "name": "Foreground"
+            },
+            {
+              "slug": "background",
+              "color": "#272727",
+              "name": "Background"
+            },
+            {
+              "slug": "background-header",
+              "color": "#000000",
+              "name": "Background header"
+            },
+            {
+              "slug": "primary",
+              "color": "#ffffff",
+              "name": "Primary"
+            },
+            {
+              "slug": "secondary",
+              "color": "#1b484b",
+              "name": "Secondary"
+            },
+            {
+              "slug": "tertiary",
+              "color": "#d3bc8e",
+              "name": "Tertiary"
+            },
+            {
+              "slug": "quaternary",
+              "color": "#938f8f",
+              "name": "Quaternary"
+            }
+             ]
+        },
+        "typography": {
+      			"fontFamilies": [
+              {
+      					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
+      					"name": "System Font",
+      					"slug": "system-font"
+      				},
+      				{
+      					"fontFamily": "\"Source Serif Pro\", serif",
+      					"name": "Source Serif Pro",
+      					"slug": "source-serif-pro"
+      				}
+      	]
+		}
+	},
+    "styles": {
+		"blocks": {
+			"core/button": {
+				"color": {
+          "background": "var(--wp--preset--color--secondary)",
+					"text": "var(--wp--preset--color--background)"
+				}
+			},
+			"core/post-title": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--source-serif-pro)",
+					"fontWeight": "300",
+					"fontSize": "var(--wp--custom--typography--font-size--gigantic)"
+				}
+			},
+			"core/query-title": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--source-serif-pro)",
+					"fontSize": "var(--wp--custom--typography--font-size--gigantic)"
+				}
+			},
+			"core/site-title": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--system-font)",
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"fontWeight": "normal"
+				}
+			}
+		},
+		"color": {
+      "background": "var(--wp--preset--color--background)",
+			"text": "var(--wp--preset--color--foreground)"
+		},
+		"elements": {
+			"h1": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--source-serif-pro)",
+					"fontWeight": "300",
+					"fontSize": "var(--wp--custom--typography--font-size--colossal)"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--source-serif-pro)",
+					"fontWeight": "300",
+					"fontSize": "var(--wp--custom--typography--font-size--gigantic)"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--source-serif-pro)",
+					"fontWeight": "300",
+					"fontSize": "var(--wp--custom--typography--font-size--huge)"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--source-serif-pro)",
+					"fontWeight": "300",
+					"fontSize": "var(--wp--preset--font-size--x-large)"
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--system-font)",
+					"fontWeight": "700",
+					"textTransform": "uppercase",
+					"fontSize": "var(--wp--preset--font-size--medium)"
+				}
+			},
+			"h6": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--system-font)",
+					"fontWeight": "400",
+					"textTransform": "uppercase",
+					"fontSize": "var(--wp--preset--font-size--medium)"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var(--wp--preset--color--primary)"
+				}
+			}
+		},
+        "typography": {
+			"fontFamily": "var(--wp--preset--font-family--system-font)",
+			"fontSize": "var(--wp--preset--font-size--normal)"
+		}
+    }
+}

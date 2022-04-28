@@ -1,0 +1,352 @@
+/*
+Theme Name: TT2 Gopher Blocks
+Description: TT2 Gopher is a child of Twenty Twenty-Two default theme bundled with variations of white, dark and maroon-gold color modes. The theme is designed as a learning demo for CSS-Tricks article and not intended for distribution or use in production sites.
+Requires at least: 5.9
+Tested up to: 5.8.3
+Requires PHP: 5.6
+Version: 0.0.1 (beta)
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tt2gopher
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments
+
+*/
+
+/*
+ * Font smoothing.
+ * This is a niche setting that will not be available via Global Styles.
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Text and navigation link styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+
+a {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.25ch;
+}
+
+a:hover,
+a:focus {
+	text-decoration-style: dashed;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+.wp-block-navigation .wp-block-navigation-item a:hover,
+.wp-block-navigation .wp-block-navigation-item a:focus {
+	text-decoration: underline;
+	text-decoration-style: solid;
+}
+
+/*
+ * Search and File Block button styles.
+ * Necessary until the following issues are resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/36444
+ * https://github.com/WordPress/gutenberg/issues/27760
+ */
+
+.wp-block-search__button,
+.wp-block-file .wp-block-file__button {
+	background-color: var(--wp--preset--color--primary);
+	border-radius: 0;
+	border: none;
+	color: var(--wp--preset--color--background);
+	font-size: var(--wp--preset--font-size--medium);
+	padding: calc(.667em + 2px) calc(1.333em + 2px);
+}
+
+/*
+ * Button hover styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+
+.wp-block-search__button:hover,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:hover {
+	opacity: 0.90;
+}
+
+/*
+ * Alignment styles.
+ * These rules are temporary, and should not be relied on or
+ * modified too heavily by themes or plugins that build on
+ * Twenty Twenty-Two. These are meant to be a precursor to
+ * a global solution provided by the Block Editor.
+ *
+ * Relevant issues:
+ * https://github.com/WordPress/gutenberg/issues/35607
+ * https://github.com/WordPress/gutenberg/issues/35884
+ */
+
+.wp-site-blocks,
+body > .is-root-container,
+.edit-post-visual-editor__post-title-wrapper,
+.wp-block-group.alignfull,
+.wp-block-group.has-background,
+.wp-block-cover.alignfull,
+.is-root-container .wp-block[data-align="full"] > .wp-block-group,
+.is-root-container .wp-block[data-align="full"] > .wp-block-cover {
+	padding-left: var(--wp--custom--spacing--outer);
+	padding-right: var(--wp--custom--spacing--outer);
+}
+
+.wp-site-blocks .alignfull,
+.wp-site-blocks > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-cover,
+.wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-template-part > .wp-block-cover,
+body > .is-root-container > .wp-block-group.has-background,
+body > .is-root-container > .wp-block-cover,
+body > .is-root-container > .wp-block-template-part > .wp-block-group.has-background,
+body > .is-root-container > .wp-block-template-part > .wp-block-cover,
+.is-root-container .wp-block[data-align="full"] {
+	margin-left: calc(-1 * var(--wp--custom--spacing--outer)) !important;
+	margin-right: calc(-1 * var(--wp--custom--spacing--outer)) !important;
+	width: unset;
+}
+
+/* Blocks inside columns don't have negative margins. */
+.wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
+.is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"],
+/* We also want to avoid stacking negative margins. */
+.wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
+.is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group) .wp-block[data-align="full"] {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: inherit;
+}
+
+/*
+ * Responsive menu container padding.
+ * This ensures the responsive container inherits the same
+ * spacing defined above. This behavior may be built into
+ * the Block Editor in the future.
+ */
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding-top: var(--wp--custom--spacing--outer);
+	padding-bottom: var(--wp--custom--spacing--large);
+	padding-right: var(--wp--custom--spacing--outer);
+	padding-left: var(--wp--custom--spacing--outer);
+}
+
+/*
+ * Custom theme styles.
+ */
+
+ /* navigation submenu */
+ .wp-block-navigation:not(.has-background)
+ .wp-block-navigation__submenu-container {
+  background-color: #fff;
+  border: 1px solid var(--wp--preset--color--quaternary);
+  color: #000;
+}
+
+.wp-block-post-title a,
+.wp-block-post-date a,
+.wp-block-site-title a {
+	text-decoration: none;
+}
+
+.wp-block-post-title a:hover,
+.wp-block-post-date a:hover,
+.wp-block-site-title a:hover {
+	text-decoration: underline;
+}
+
+.wp-block-site-title[style*="text-transform:uppercase"] {
+	letter-spacing: 0.15em;
+}
+/*
+ * Comment form cleanup.
+ */
+
+input {
+	font-family: inherit;
+}
+
+textarea,
+input:not([type="submit"]):not([type="button"]) {
+	color: var(--wp--preset--color--foreground);
+	background: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--foreground);
+}
+
+textarea:focus,
+input:not([type="submit"]):not([type="button"]):focus {
+	border-color: var(--wp--preset--color--secondary);
+}
+
+.comment-form label {
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-post-comments .comment-form-cookies-consent #wp-comment-cookies-consent {
+	margin-top: 0.2em;
+}
+
+.wp-block-post-comments h3#comments {
+	margin-top: var(--wp--style--block-gap);
+}
+
+.wp-block-post-comments .navigation + .comment-respond {
+	margin-top: calc(3 * var(--wp--style--block-gap));
+}
+
+/*
+ * Drop cap refinements.
+ */
+
+.has-drop-cap:not(:focus)::first-letter {
+	font-size: 3.15em;
+	font-weight: 300;
+	margin: 0.25em 0.125em 0 0;
+}
+
+/* ---------------------------------------
+ * Custom theme styles.
+ ----------------------------------------- */
+
+ a {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.25ch;
+	text-decoration-color: var(--wp--preset--color--tertiary)!important;
+}
+
+a:hover,
+a:focus {
+	text-decoration-style: underline;
+	text-decoration-color: var(--wp--preset--color--tertiary)!important;
+	color: var(--wp--preset--color--tertiary)!important;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+ .wp-block-site-title a {
+	text-decoration: none !important;
+}
+.wp-block-site-title a:hover {
+	color: var(--wp--preset--color--tertiary)!important;
+}
+.wp-block-site-title a,
+.wp-block-post-date a {
+	text-decoration: none !important;
+
+}
+
+
+.wp-block-post-title a {
+	text-decoration: none!important;
+}
+
+
+.wp-site-title a:hover,
+.wp-block-post-title a:hover,
+.wp-block-post-date a:hover,
+.wp-block-site-title a:hover {
+	text-decoration: underline!important;
+	text-decoration-color: var(--wp--preset--color--tertiary)!important;
+	color: var(--wp--preset--color--foreground-body)!important;;
+}
+
+/* navigation */
+.wp-block-navigation .wp-block-navigation-item a:hover {
+	text-decoration: underline!important;
+	text-decoration-color: var(--wp--preset--color--tertiary)!important;
+	color: var(--wp--preset--color--foreground-body)!important;;
+}
+
+/* ---------------------------------------
+* Custom Styles
+---------------------------------------- */
+
+/* separators */
+
+hr.is-style-tt2gopher-separator-thick,
+.wp-block-separator.is-style-tt2gopher-separator-thick {
+	border-bottom-width: 5px;
+	border-bottom-color: var(--wp--preset--color--primary)!important;
+}
+
+hr.is-style-tt2gopher-separator-thin,
+.wp-block-khorunga.is-style-tt2gopher-separator-thin {
+	border-bottom-width: 1px;
+	border-bottom-color: var(--wp--preset--color--primary)!important;
+	padding-top: 1em;
+}
+
+hr.is-style-tt2gopher-wide,
+.wp-block-tt2gopher.is-style-khesara-wide {
+	border-bottom-width: 3px!important;
+	border-bottom-color: var(--wp--preset--color--primary)!important;
+}
+
+/* Custom Tweet style */
+.wp-block-embed__wrapper {
+ Border-left: 2px solid var(--wp--preset--color--tertiary)!important;
+}
+
+/* block quotes customization */
+
+.wp-block-quote {
+	border-width: 2px!important;
+	border-left-color: var(--wp--preset--color--tertiary);
+}
+
+.wp-block-quote.has-text-align-right {
+	border-width: 2px!important;
+	border-right-color: var(--wp--preset--color--tertiary);
+}
+
+
+.wp-block-quote.is-style-large p {
+	font-size: 1.5rem;
+	font-style: normal;
+	line-height: 1.4;
+}
+
+.wp-block-quote cite, .wp-block-quote footer {
+	color: var(--wp--preset--color--quaternary)!important;
+}
+
+.wp-block-quote.is-style-large cite {
+	text-transform: none;
+}
+
+/* block pullquote */
+.wp-block-pullquote {
+	border-color: var(--wp--preset--color--background)!important;
+	padding-bottom: 1rem;
+}
+
+.wp-block-pullquote p {
+	font-size: 1.6em;
+	line-height: 1.5;
+}
+
+.wp-block-pullquote cite {
+	text-transform: none;
+	font-size: 1.1rem;
+	line-height: 1.5;
+	color: var(--wp--preset--color--quaternary)!important;
+}
+
+.wp-block-pullquote blockquote,
+.wp-block-pullquote p {
+	margin-top: -1rem;
+	margin-bottom: 1rem;
+}
