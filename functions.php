@@ -131,5 +131,37 @@ endif;
 
 add_action( 'wp_head', 'tt2gopher_preload_webfonts' );
 
+
+/**
+ * Registers block categories, and type.
+ *
+ * https://github.com/Automattic/themes/blob/trunk/archeo/functions.php
+ */
+
+function tt2gopher_register_block_pattern_categories() {
+
+	$block_pattern_categories = array(
+		'tt2gopher-images'   => array( 'label' => __( 'TT2 Gopher - Images', 'tt2gopher' ) ),
+		'tt2gopher-header' 	 => array( 'label' => __( 'TT2 Gopher - Headers', 'tt2gopher' ) ),
+		'tt2gopher-footer'   => array( 'label' => __( 'TT2 Gopher - Footers', 'tt2gopher' ) ),
+		'tt2gopher-featured' => array( 'label' => __( 'TT2 Gopher - Featured', 'tt2gopher' ) ),
+		'tt2gopher-post'	 => array( 'label' => __( 'TT2 Gopher - Post', 'tt2gopher' ) ),
+		'tt2gopher-page' 	 => array( 'label' => __( 'TT2 Gopher - Page', 'tt2gopher' ) ),
+		'tt2gopher-query'    => array( 'label' => __( 'TT2 Gopher - Query', 'tt2gopher' ) ),
+	);
+
+	/**
+	 * Filters the theme block pattern categories.
+	 */
+	$block_pattern_categories = apply_filters( 'tt2gopher_block_pattern_categories', $block_pattern_categories );
+
+	foreach ( $block_pattern_categories as $name => $properties ) {
+		if ( ! WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( $name ) ) {
+			register_block_pattern_category( $name, $properties );
+		}
+	}
+}
+add_action( 'init', 'tt2gopher_register_block_pattern_categories', 9 );
+
 // Add block patterns
-require get_template_directory() . '/inc/block-patterns.php';
+//require get_template_directory() . '/inc/block-patterns.php';
