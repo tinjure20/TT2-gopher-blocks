@@ -163,5 +163,5 @@ function tt2gopher_register_block_pattern_categories() {
 }
 add_action( 'init', 'tt2gopher_register_block_pattern_categories', 9 );
 
-// Add block patterns
-//require get_template_directory() . '/inc/block-patterns.php';
+// Add block styles
+require get_template_directory() . '/inc/block-styles.php';
