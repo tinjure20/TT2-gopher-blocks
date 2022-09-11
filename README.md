@@ -4,6 +4,7 @@ A repository of [Twenty Twenty-Two](https://wordpress.org/themes/twentytwentytwo
 
 You are in **Branch-1**, the GitHub repo of the _**Creating Block Theme Hero Sections with Dynamic Post Featured Image in WordPress**_ project with updated cover header block templates.
 
+
 It is intended as a learning demo only; not intended for distribution or use in production sites.
 
 
@@ -17,7 +18,6 @@ git clone https://github.com/tinjure20/TT2-gopher-blocks.git
 ```
 
 It will create a directory in your project folder.
-
 
 ### If you are new to Block themes
 
