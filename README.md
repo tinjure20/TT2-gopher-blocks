@@ -1,8 +1,9 @@
 # TT2-gopher-blocks
 A repository of [Twenty Twenty-Two](https://wordpress.org/themes/twentytwentytwo/)-based demo WordPress block theme created for the CSS-Tricks articles - [Creating Style Variations in WordPress Block Themes](https://css-tricks.com/creating-style-variations-in-wordpress-block-themes/), and [How to Create Patterns in WordPress Block Themes]().
 
-It is intended as a learning demo only; not intended for distribution or use in production sites.
+**Note**: Repository for _Creating Block Theme Hero Sections with Dynamic Post Featured Image in WordPress_ project, please visit -**Branch-1**_.
 
+It is intended as a learning demo only; not intended for distribution or use in production sites.
 
 ![image](./screenshot.png)
 
