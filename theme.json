@@ -163,23 +163,45 @@
 			"fontSizes": [
 				{
 					"size": ".9rem",
-					"slug": "small"
+					"fluid": false,
+					 "slug": "small",
+					"name": "Small"
 				},
 				{
-					"size": "clamp(1rem, 1.25vw, 1.25rem)",
-					"slug": "normal"
+					"size": "1rem",
+					"fluid": {
+						"min": "1rem",
+						"max": "1.25rem"
+					},
+					"slug": "normal",
+					"name": "Normal"
 				},
 				{
-					"size": "clamp(1.25rem, 2vw, 1.75rem)",
-					"slug": "medium"
+					"size": "1.25rem",
+					"fluid": {
+						"min": "1.25rem",
+						"max": "1.75rem"
+					},
+					"slug": "medium",
+					"name": "Medium"
 				},
 				{
-					"size": "clamp(1.25rem, 2vw, 2.25rem)",
-					"slug": "large"
+					"size": "1.5rem",
+					"fluid": {
+						"min": "1.5rem",
+						"max": "2.25rem"
+					},
+					"slug": "large",
+					"name": "large"
 				},
 				{
-					"size": "clamp(1.75rem, 3vw, 3.25rem)",
-					"slug": "x-large"
+					"size": "1.75",
+					"fluid": {
+						"min": "1.75rem",
+						"max": "3.25rem"
+					},
+					"slug": "x-large",
+					"name": "x-large"
 				}
 			]
 		},
